@@ -1,0 +1,35 @@
+{
+    "name": "gabebritto/laravel-simple-sqs",
+    "description": "A Laravel package for asynchronous microservice communication via SQS with raw JSON payloads.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gabebritto",
+            "email": "gabrielsouto16@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/queue": "^8.0|^9.0|^10.0|^11.0",
+        "aws/aws-sdk-php": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gabebritto\\LaravelSimpleSqs\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gabebritto\\LaravelSimpleSqs\\SqsMessengerServiceProvider"
+            ],
+            "aliases": {
+                "SqsPublisher": "Gabebritto\\LaravelSimpleSqs\\Facades\\SqsPublisher"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
